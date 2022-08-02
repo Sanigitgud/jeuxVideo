@@ -12,10 +12,10 @@ public class DBConnection {
     private static String dsn = "jdbc:mysql://localhost:3307/jeuxvideo";
 
     // @Value("${spring.datasource.username}")
-    private static String dbUser ="Sani";
+    private static String dbUser ="***";
 
     // @Value("${spring.datasource.password}")
-    private static String dbPass = "13Besiom";
+    private static String dbPass = "*****";
 
     /*
      * Etablie la connexion avec la DB
