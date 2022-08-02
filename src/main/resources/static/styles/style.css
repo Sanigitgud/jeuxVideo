@@ -1,0 +1,195 @@
+/* .wrapper {
+    display: grid;
+    grid-template-columns:25% 50% 25%;
+    grid-template-rows: 10% 10% 50% 25%;
+} */
+
+/* body{
+    display: flex;
+    justify-content: center;
+    align-items:center ;
+} */
+
+.image-container {
+    background-image: url("/image/gamingPx.jpg");
+    /* The image used - important! */
+    background-size: cover;
+    position: relative;
+    /* Needed to position the cutout text in the middle of the image */
+    height: 300px;
+    /* Some height */
+}
+
+/* Add a black background color to the top navigation */
+#navbar {
+    background-color: #333;
+    overflow: hidden;
+    z-index: 1100;
+}
+
+/* Style the links inside the navigation bar */
+#navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.card-group {
+    padding: 16px;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.sticky+.card-group {
+    padding-top: 60px;
+}
+
+/* Change the color of links on hover */
+#navbar a:hover {
+    background-color: white;
+    color: black;
+}
+
+/* Add a color to the active/current link */
+#navbar a.active {
+    background-color: #7592ea;
+    color: white;
+}
+
+.text {
+    background-color: black;
+    color: white;
+    font-size: 10vw;
+    /* Responsive font size */
+    font-weight: bold;
+    margin: 0 auto;
+    /* Center the text container */
+    padding: 10px;
+    width: 50%;
+    text-align: center;
+    /* Center text */
+    position: absolute;
+    /* Position text */
+    top: 50%;
+    /* Position text in the middle */
+    left: 50%;
+    /* Position text in the middle */
+    transform: translate(-50%, -50%);
+    /* Position text in the middle */
+    mix-blend-mode: screen;
+    /* This makes the cutout text possible */
+}
+
+header {
+    text-align: center;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+}
+
+h1 {
+    background-color: beige;
+    text-align: center;
+
+}
+
+/* .search_bar{
+    text-align: center;
+    grid-column-start: 2;
+} */
+
+hr.rounded {
+    border-top: 8px solid rgb(25, 29, 118);
+    border-radius: 5px;
+}
+
+hr.dashed {
+    border-top: 3px dashed rgb(13, 12, 21);
+}
+
+/* .button {
+
+    background: transparent;
+    border: none !important;
+    font-size:0;
+} */
+
+.Trie {
+    display: flex;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.card-group {
+    justify-content: center;
+    align-items: center;
+    /* grid-column-start: 2; */
+    grid-row-start: 3;
+    text-align: center;
+
+}
+
+.form {
+    /* grid-column-start: 3; */
+    grid-row-start: 4;
+    justify-content: end;
+    align-items: flex-end;
+}
+
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>nouveau jeu</title>
+    <link th:href="@{/styles/style.css}" rel="stylesheet" />
+</head>
+<h1>New Game</h1>
+
+<body>
+    <form method=post action="#" th:action="@{/newJeux}" th:object="${jeux}">
+
+        <p>Titre: <input type="text" th:field="*{Jeux_Titre}"/></p>
+
+        <p>Description: <input type="text" th:field="*{Jeux_Description}"/></p>
+
+        <!-- <p>Date de sortie: <input type="date" th:field="*{Jeux_DateSortie}"/></p> -->
+
+        <p>Prix: <input type="text" th:field="*{Jeux_Prix}"/></p>
+
+        <p>Pays d'origine: <input type="text" th:field="*{Jeux_PaysOrigine}"/></p>
+
+        <p>Connexion: <input type="text" th:field="*{Jeux_Connexion}"/></p>
+
+        <p>Mode jeux: <input type="text" th:field="*{Jeux_Mode}"/></p>
+
+        <div>
+            <INPUT TYPE=SUBMIT VALUE="Valider"></a> <input type="reset" value="Reset" />
+        </div>
+    </form>
+</body>
+</html>
