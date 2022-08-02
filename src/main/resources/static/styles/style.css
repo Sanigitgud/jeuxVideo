@@ -168,6 +168,10 @@ hr.dashed {
     /* Black w/ opacity */
 }
 
+.modal-wrap {
+    width: 400px;
+}
+  
 /* Modal Content/Box */
 .modal-content {
     background-color: #fefefe;
