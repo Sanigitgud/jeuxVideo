@@ -2,36 +2,47 @@ package com.crud.jeuxVideo.model;
 
 import java.io.Serializable;
 import java.util.Date;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Table;
 import javax.persistence.Id;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 
 @Entity
-@Table(name = "jeux")
+
 public class Jeux implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int Jeux_Id;
+	private Long Jeux_Id;
+
 	private String Jeux_Titre;
+
 	private String Jeux_Description;
+
 	private double Jeux_Prix;
+
+	@Column(name = "Jeux_DateSortie")
 	private Date Jeux_DateSortie;
+
+	@Column(name = "Jeux_PaysOrigine")
 	private String Jeux_PaysOrigine;
+
 	private String Jeux_Connexion;
+
 	private String Jeux_Mode;
+
 	private int Genre_Id;
 	/**
 	 * 
 	 */
 	public Jeux() {
 	}
-	public int getJeux_Id() {
+	public Long getJeux_Id() {
 		return Jeux_Id;
 	}
-	public void setJeux_Id(int jeux_Id) {
+	public void setJeux_Id(Long jeux_Id) {
 		Jeux_Id = jeux_Id;
 	}
 	public String getJeux_Titre() {
