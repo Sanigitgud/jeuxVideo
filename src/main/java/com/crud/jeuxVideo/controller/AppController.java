@@ -19,12 +19,13 @@ public class AppController {
 
 	@Autowired
 	private JeuxRepository jeuxRepository;
-
+	private int i = 0;
     @GetMapping("/")
 	public String viewHomePage(Model model) {
 		ArrayList<Jeux> jeux = (ArrayList<Jeux>) jeuxRepository.findAll();
 		Collections.sort(jeux, Comparator.comparing(Jeux::getJeux_Titre));
 		model.addAttribute("jeux", jeux);
+		model.addAttribute("int", i);
 		return "index";
 	}
 	@GetMapping("/search")
@@ -32,6 +33,7 @@ public class AppController {
 		List<Jeux> searchedJeux = jeuxRepository.searchJeux(searchText);
 		Collections.sort(searchedJeux, Comparator.comparing(Jeux::getJeux_Titre));
 		model.addAttribute("jeux", searchedJeux);
+		model.addAttribute("int", i);
 		return "searchResult";
 	}		
 }
