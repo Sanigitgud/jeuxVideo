@@ -11,5 +11,7 @@ public interface JeuxRepository extends JpaRepository<Jeux, Long>{
 
     @Query("SELECT u FROM Jeux u WHERE u.Jeux_Titre LIKE %?1%")
 	public List<Jeux> searchJeux(String Jeux_Titre);
+    // @Query ("SELECT u FROM Jeux WHERE u.Genre_Id = ?1")
+    // public List<searchJeuxByGenre> sortByGenre(Long Genre_Id);
    
 }

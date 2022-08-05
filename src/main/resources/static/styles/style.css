@@ -167,10 +167,6 @@ hr.dashed {
     background-color: rgba(0, 0, 0, 0.4);
     /* Black w/ opacity */
 }
-
-.modal-wrap {
-    width: 400px;
-}
   
 /* Modal Content/Box */
 .modal-content {
@@ -179,7 +175,7 @@ hr.dashed {
     /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
-    width: 50%;
+    width: 60%;
     /* Could be more or less, depending on screen size */
 }
 

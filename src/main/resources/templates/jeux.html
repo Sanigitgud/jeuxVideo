@@ -22,15 +22,20 @@
     </header>
 
     <div id="navbar">
-        <a href="#home">Accueil</a>
+        <a href="accueil">Accueil</a>
         <a class="active" href="#jeux">Jeux</a>
-        <a href="#contact">Contact</a>
-        <a href="#about">A propos</a>
+        <a href="contact">Contact</a>
+        <a href="about">A propos</a>
     </div>
 
     <hr class="dashed">
 
     <div class="Trie">
+
+        <form id="answer" action="" class="example">
+            <input type="text" placeholder="Chercher un jeu" id="answertext">
+            <input type="submit" value="ok">
+        </form>
 
         <select name="genre" id="genre-select">
             <option value="">--Filtrer par genre--</option>
@@ -38,11 +43,6 @@
                 <option value="${genre.Genre_Titre}"><span th:text="${genre.Genre_Titre}"> </span></option>
             </div>
         </select>
-
-        <form id="answer" action="" class="example">
-            <input type="text" placeholder="Chercher un jeu" id="answertext">
-            <input type="submit" value="ok">
-        </form>
 
         <!-- <select name="plateforme" id="plateforme-select">
             <option value="">--Trier par plateforme--</option>

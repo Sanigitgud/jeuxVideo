@@ -23,14 +23,19 @@ public class AppController {
 	private JeuxRepository jeuxRepository;
 	@Autowired
 	private GenreRepository genreRepository;
-    @GetMapping("/")
+
+	@GetMapping("/accueil")
 	public String viewHomePage(Model model) {
+		return "accueil";
+	}
+    @GetMapping("/jeux")
+	public String viewJeuxPage(Model model) {
 		List<Genre> genre = genreRepository.findAll();
 		ArrayList<Jeux> jeux = (ArrayList<Jeux>) jeuxRepository.findAll();
 		Collections.sort(jeux, Comparator.comparing(Jeux::getJeux_Titre));
 		model.addAttribute("genre", genre);
 		model.addAttribute("jeux", jeux);
-		return "index";
+		return "jeux";
 	}
 	@GetMapping("/search")
 	public String searchJeux(@RequestParam(name = "q")String searchText, Model model){
@@ -40,5 +45,13 @@ public class AppController {
 		model.addAttribute("genre", genre);
 		model.addAttribute("jeux", searchedJeux);
 		return "searchResult";
-	}		
+	}
+	@GetMapping("/contact")
+	public String viewContact(Model model){
+		return "contact";
+	}
+	@GetMapping("/about")
+	public String viewAbout(Model model){
+		return"about";
+	}	
 }
