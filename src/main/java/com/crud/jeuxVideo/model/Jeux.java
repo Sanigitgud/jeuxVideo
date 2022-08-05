@@ -25,7 +25,7 @@ public class Jeux implements Serializable{
 
 	@Column(name = "Jeux_DateSortie")
 	private Date Jeux_DateSortie;
-
+	
 	@Column(name = "Jeux_PaysOrigine")
 	private String Jeux_PaysOrigine;
 

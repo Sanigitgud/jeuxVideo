@@ -33,15 +33,10 @@
     <div class="Trie">
 
         <select name="genre" id="genre-select">
-            <option value="">--Trier par genre--</option>
-            <option value="MMO">MMO</option>
-            <option value="FPS">FPS</option>
-            <option value="RPG">RPG</option>
-            <option value="Action">Action</option>
-            <option value="Sport">Sport</option>
-            <option value="Plateformer">Plateformer</option>
-            <option value="Puzzle">Puzzle</option>
-            <option value="Educatif">Educatif</option>
+            <option value="">--Filtrer par genre--</option>
+            <div th:each="genre : ${genre}">
+                <option value="${genre.Genre_Titre}"><span th:text="${genre.Genre_Titre}"> </span></option>
+            </div>
         </select>
 
         <form id="answer" action="" class="example">
@@ -49,13 +44,13 @@
             <input type="submit" value="ok">
         </form>
 
-        <select name="plateforme" id="plateforme-select">
+        <!-- <select name="plateforme" id="plateforme-select">
             <option value="">--Trier par plateforme--</option>
             <option value="PC">PC</option>
             <option value="PS4">PS4</option>
             <option value="One">One</option>
             <option value="Switch">Switch</option>
-        </select>
+        </select> -->
     </div>
 
     <hr class="dashed">
