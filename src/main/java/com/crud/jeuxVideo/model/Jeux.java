@@ -33,7 +33,7 @@ public class Jeux implements Serializable{
 
 	private String Jeux_Mode;
 
-	private int Genre_Id;
+	private Long Genre_Id;
 	/**
 	 * 
 	 */
@@ -87,10 +87,10 @@ public class Jeux implements Serializable{
 	public void setJeux_Mode(String jeux_Mode) {
 		Jeux_Mode = jeux_Mode;
 	}
-	public int getGenre_Id() {
+	public Long getGenre_Id() {
 		return Genre_Id;
 	}
-	public void setGenre_Id(int genre_Id) {
+	public void setGenre_Id(Long genre_Id) {
 		Genre_Id = genre_Id;
 	}
 	// @Override

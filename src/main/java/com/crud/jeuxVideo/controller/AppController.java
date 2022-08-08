@@ -24,7 +24,7 @@ public class AppController {
 	@Autowired
 	private GenreRepository genreRepository;
 
-	@GetMapping("/accueil")
+	@GetMapping("/")
 	public String viewHomePage(Model model) {
 		return "accueil";
 	}
@@ -38,12 +38,21 @@ public class AppController {
 		return "jeux";
 	}
 	@GetMapping("/search")
-	public String searchJeux(@RequestParam(name = "q")String searchText, Model model){
+	public String searchJeux(@RequestParam(name = "q", required = false)String searchText, Model model,@RequestParam(name = "g", required = false)Long genreS){
 		List<Genre> genre = genreRepository.findAll();
-		List<Jeux> searchedJeux = jeuxRepository.searchJeux(searchText);
+		List<Jeux> searchedJeux = (searchText != null) ? jeuxRepository.searchJeux(searchText) : Collections.emptyList();
+		List<Jeux> filteredByGenre = (genreS != null) ? jeuxRepository.filterByGenre(genreS) : Collections.emptyList();
 		Collections.sort(searchedJeux, Comparator.comparing(Jeux::getJeux_Titre));
+		Collections.sort(filteredByGenre, Comparator.comparing(Jeux::getJeux_Titre));
+		if (!searchedJeux.isEmpty() && !filteredByGenre.isEmpty()) {
+			searchedJeux.retainAll(filteredByGenre);
+			model.addAttribute("jeux", searchedJeux);
+		} else if (searchedJeux.isEmpty() && !filteredByGenre.isEmpty()) {
+			model.addAttribute("jeux", filteredByGenre);
+		} else {
+			model.addAttribute("jeux", searchedJeux);
+		}
 		model.addAttribute("genre", genre);
-		model.addAttribute("jeux", searchedJeux);
 		return "searchResult";
 	}
 	@GetMapping("/contact")

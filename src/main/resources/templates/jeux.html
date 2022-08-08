@@ -22,8 +22,8 @@
     </header>
 
     <div id="navbar">
-        <a href="accueil">Accueil</a>
-        <a class="active" href="#jeux">Jeux</a>
+        <a href="/">Accueil</a>
+        <a class="active" href="jeux">Jeux</a>
         <a href="contact">Contact</a>
         <a href="about">A propos</a>
     </div>
@@ -31,26 +31,18 @@
     <hr class="dashed">
 
     <div class="Trie">
+      
+        <select onchange="search()" name="genre" id="genre-select">
+            <option value="">--Filtrer par genre--</option>
+            <div th:each="genre : ${genre}">
+                <option th:value="${genre.Genre_Id}"><span th:text="${genre.Genre_Titre}"> </span></option>
+            </div>
+        </select>
 
         <form id="answer" action="" class="example">
             <input type="text" placeholder="Chercher un jeu" id="answertext">
             <input type="submit" value="ok">
         </form>
-
-        <select name="genre" id="genre-select">
-            <option value="">--Filtrer par genre--</option>
-            <div th:each="genre : ${genre}">
-                <option value="${genre.Genre_Titre}"><span th:text="${genre.Genre_Titre}"> </span></option>
-            </div>
-        </select>
-
-        <!-- <select name="plateforme" id="plateforme-select">
-            <option value="">--Trier par plateforme--</option>
-            <option value="PC">PC</option>
-            <option value="PS4">PS4</option>
-            <option value="One">One</option>
-            <option value="Switch">Switch</option>
-        </select> -->
     </div>
 
     <hr class="dashed">
@@ -76,16 +68,17 @@
                             <p class="card-text"><span th:text="${jeux.Jeux_PaysOrigine}"> </span></p>
                             <p class="card-text"><span th:text="${jeux.Jeux_Mode}"> </span></p>
                             <p class="card-text"><span th:text="${jeux.Jeux_Prix}"> </span>€</p>
+                            <p class="card-text"><span th:text="${jeux.Genre_Id}"></span></p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    
+
     <script th:src="@{/js/modal.js}"></script>
     <script th:src="@{/js/navbar.js}"></script>
-    <script th:src="@{/js/AjaxCard.js}"></script>
+    <script th:src="@{/js/ajaxcard.js}"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
         crossorigin="anonymous"></script>
