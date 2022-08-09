@@ -11,7 +11,6 @@ function openModal() {
     for (var i = 0; i < btn.length; i++) {
         btn[i].onclick = function () {
             this.nextElementSibling.style.display = "block";
-            //   modal.style.display = "block";
         }
     }
 
