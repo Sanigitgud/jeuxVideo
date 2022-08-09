@@ -43,19 +43,7 @@
                     <p class="card-text"><span th:text="${jeux.Jeux_Description}"> </span></p>
                     <p class="card-text"><span th:text="${jeux.Jeux_Prix}"> </span>€</p>
                     <button type="button" class="btn btn-primary modifButton" data-bs-toggle="modal">Modifier</button>
-                    <div id="jeuxModal" class="modal">
-                        <!-- Modal content -->
-                        <div class="modal-content">
-                            <span class="close">&times;</span>
-                            <h5 class="card-title"><span th:text="${jeux.Jeux_Titre}"> </span></h5>
-                            <p class="card-text"><span th:text="${jeux.Jeux_Description}"> </span></p>
-                            <p class="card-text"><span th:text="${jeux.Jeux_DateSortie}"> </span></p>
-                            <p class="card-text"><span th:text="${jeux.Jeux_PaysOrigine}"> </span></p>
-                            <p class="card-text"><span th:text="${jeux.Jeux_Mode}"> </span></p>
-                            <p class="card-text"><span th:text="${jeux.Jeux_Prix}"> </span>€</p>
-                            <p class="card-text"><span th:text="${jeux.Genre_Id}"></span></p>
-                        </div>
-                    </div>
+       
                     <button type="button" class="btn btn-primary supprButton" data-bs-toggle="modal">Supprimer</button>
                     <div id="jeuxModal" class="modal">
                         <div class="modal-content">

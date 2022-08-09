@@ -5,47 +5,88 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>new</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        media="screen" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <link th:href="@{/styles/style.css}" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+    <link th:href="@{/styles/form.css}" rel="stylesheet" />
 </head>
 
 <body>
     <div class="container text-center">
+
+        <h1>Nouveau jeux</h1>
+
         <form method="post" action="#" th:action="@{/success}" th:object="${jeux}">
-            <div>
-                <p>Titre: <input type="text" th:field="*{Jeux_Titre}" /></p>
+            <div class="form-group row">
+                <label class="col-4 col-form-label">Titre: </label>
+                <div class="col-8">
+                    <input type="text" th:field="*{Jeux_Titre}" style="width: 15em; height: 2em;" required oninvalid="this.setCustomValidity('Champ obligatoire')"
+                    oninput="this.setCustomValidity('')" />
+                </div>
             </div>
-            <div>
-                <p>Description: <input type="text" th:field="*{Jeux_Description}" /></p>
+
+            <div class="form-group row">
+                <label class="col-4 col-form-label">Description: </label>
+                <div class="col-8">
+                    <input type="text" th:field="*{Jeux_Description}" style="width: 15em; height: 2em;" required oninvalid="this.setCustomValidity('Champ obligatoire')"
+                    oninput="this.setCustomValidity('')"/>
+                </div>
             </div>
-            <div>
-                <p>Prix: <input type="text" th:field="*{Jeux_Prix}" /></p>
+
+            <div class="form-group row">
+                <label class="col-4 col-form-label">Prix: </label>
+                <div class="col-8">
+                    <input type="text" th:field="*{Jeux_Prix}" style="width: 15em; height: 2em;"/>
+                </div>
             </div>
-            <div>
-                <p>Date de sortie: <input type="date" th:field="*{Jeux_DateSortie}" /></p>
+
+            <div class="form-group row">
+                <label class="col-4 col-form-label">Date de sortie: </label>
+                <div class="col-8">
+                    <input type="date" th:field="*{Jeux_DateSortie}" style="width: 15em; height: 2em;" required oninvalid="this.setCustomValidity('Champ obligatoire')"
+                    oninput="this.setCustomValidity('')"/>
+                </div>
             </div>
-            <div>
-                <p>Pays d'origine: <input type="text" th:field="*{Jeux_PaysOrigine}" /></p>
+
+            <div class="form-group row">
+                <label class="col-4 col-form-label">Pays d'origine: </label>
+                <div class="col-8">
+                    <input type="text" th:field="*{Jeux_PaysOrigine}" style="width: 15em; height: 2em;" required oninvalid="this.setCustomValidity('Champ obligatoire')"
+                    oninput="this.setCustomValidity('')"/>
+                </div>
             </div>
-            <div>
-                <p>Connexion: <input type="text" th:field="*{Jeux_Connexion}" /></p>
+
+            <div class="form-group row">
+                <label class="col-4 col-form-label">Connexion: </label>
+                <div class="col-8">
+                    <input type="text" th:field="*{Jeux_Connexion}" style="width: 15em; height: 2em;" required oninvalid="this.setCustomValidity('Champ obligatoire')"
+                    oninput="this.setCustomValidity('')"/>
+                </div>
             </div>
-            <div>
-                <p>Mode jeux: <input type="text" th:field="*{Jeux_Mode}" /></p>
+
+            <div class="form-group row">
+                <label class="col-4 col-form-label">Mode jeux: </label>
+                <div class="col-8">
+                    <input type="text" th:field="*{Jeux_Mode}" style="width: 15em; height: 2em;" required oninvalid="this.setCustomValidity('Champ obligatoire')"
+                    oninput="this.setCustomValidity('')"/>
+                </div>
             </div>
-            <div>
-                <label>--Selectionner un genre--</label>
-                <select th:field="*{Genre_Id}">
-                        <option th:each="genre : ${genre}" th:value="${genre.Genre_Id}" th:text="${genre.Genre_Titre}"/>
-                </select>
+
+            <div class="form-group row">
+                <label class="col-4 col-form-label">Selectionner un genre</label>
+                <div class="col-8">
+                    <select th:field="*{Genre_Id}" style="width: 15em; height: 2em;">
+                        <option th:each="genre : ${genre}" th:value="${genre.Genre_Id}"
+                            th:text="${genre.Genre_Titre}" />
+                    </select>
+                </div>
             </div>
+
             <div>
-                </a><INPUT TYPE=SUBMIT VALUE="Valider"> <input type="reset"
-                    value="Annuler" />
+                <INPUT TYPE=SUBMIT VALUE="Valider" style="width: 7em; height: 2em;">
+                <input type="reset" value="Annuler" style="width: 8em; height: 2em;" />
             </div>
+
         </form>
     </div>
 </body>

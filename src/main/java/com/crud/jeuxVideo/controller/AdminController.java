@@ -67,4 +67,8 @@ public class AdminController {
         jeuxRepository.save(jeux);
         return "success";
     }
+    @GetMapping("/modifier")
+    public String modifierJeux(Model model) {
+        return "createForm";
+    }
 }
