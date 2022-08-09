@@ -62,5 +62,13 @@ public class AppController {
 	@GetMapping("/about")
 	public String viewAbout(Model model){
 		return"about";
+	}
+	@GetMapping("/admin")
+	public String adminAccess(Model model){
+		return "adminPannel";
 	}	
+	@GetMapping("/new")
+	public String createJeu(Model model){
+		return"newJeux";
+	}
 }

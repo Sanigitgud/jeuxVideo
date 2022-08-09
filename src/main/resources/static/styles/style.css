@@ -170,3 +170,19 @@ hr.dashed {
     text-decoration: none;
     cursor: pointer;
 }
+
+.button{
+    display: flex;
+    width: 10em;
+    height: 5em;
+    align-items: center;
+    justify-content: space-evenly; 
+}
+#buttons{
+    display:flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 50em;
+
+}
+
