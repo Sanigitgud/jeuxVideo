@@ -14,7 +14,8 @@
 <body>
     <div class="container text-center">
 
-        <h1>Nouveau jeux</h1>
+        <h1> <span th:if="${jeux.Jeux_Id == ''}">Nouveau jeu</span>
+            <span th:unless="${jeux.Jeux_Id == ''}">Modifier jeu</span> </h1>
 
         <form method="post" action="#" th:action="@{/success}" th:object="${jeux}">
             <div class="form-group row">
