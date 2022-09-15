@@ -18,6 +18,7 @@
             <span th:unless="${jeux.Jeux_Id == ''}">Modifier jeu</span> </h1>
 
         <form method="post" action="#" th:action="@{/success}" th:object="${jeux}">
+            
             <div class="form-group row">
                 <label class="col-4 col-form-label">Titre: </label>
                 <div class="col-8">

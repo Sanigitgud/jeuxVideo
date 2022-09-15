@@ -26,10 +26,6 @@
     font-size: 17px;
 }
 
-.card-group {
-    padding: 16px;
-}
-
 .sticky {
     position: fixed;
     top: 0;
@@ -110,10 +106,12 @@ hr.dashed {
 .card-group {
     justify-content: center;
     align-items: center;
-    /* grid-column-start: 2; */
     grid-row-start: 3;
     text-align: center;
+}
 
+.card{
+    margin: 10px;
 }
 
 .form {

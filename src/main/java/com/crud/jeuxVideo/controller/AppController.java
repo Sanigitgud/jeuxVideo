@@ -38,7 +38,8 @@ public class AppController {
 		return "jeux";
 	}
 	@GetMapping("/search")
-	public String searchJeux(@RequestParam(name = "q", required = false)String searchText, Model model,@RequestParam(name = "g", required = false)Long genreS){
+	public String searchJeux(@RequestParam(name = "q", required = false)String searchText, Model model,
+			@RequestParam(name = "g", required = false)Long genreS){
 		List<Genre> genre = genreRepository.findAll();
 		List<Jeux> searchedJeux = (searchText != null) ? jeuxRepository.searchJeux(searchText) : Collections.emptyList();
 		List<Jeux> filteredByGenre = (genreS != null) ? jeuxRepository.filterByGenre(genreS) : Collections.emptyList();
@@ -55,6 +56,7 @@ public class AppController {
 		model.addAttribute("genre", genre);
 		return "searchResult";
 	}
+	
 	@GetMapping("/contact")
 	public String viewContact(Model model){
 		return "contact";
